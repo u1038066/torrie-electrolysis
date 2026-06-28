@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import logo from '../assets/images/cropped-torrie-electrolysis-waxing-logo.png';
 
 export function Header() {
   return (
@@ -7,7 +8,7 @@ export function Header() {
       <div className={styles.header__container}>
         <div className={styles.header__brand}>
           <Link to="/" className={styles['header__brand-link']}>
-            <img className={styles['header__brand-img']} src='../src/assets/images/cropped-torrie-electrolysis-waxing-logo.png'></img>
+            <img className={styles['header__brand-img']} src={logo}></img>
             <h1>Torrie's Electrolysis & Waxing</h1>
           </Link>
         </div>
