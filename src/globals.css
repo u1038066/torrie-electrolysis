@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Source+Sans+Pro:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #C75759;
+  --color-primary-dark: #9E3A3C;
+  --color-primary-tint: #F5E6E6;
+  --color-accent: #1C5C96;
+  --color-background: #F8F6F4;
+  --color-text: #2B1C1C;
+  --main: var(--color-text);
+  --bg: var(--color-background);
+  --color-white: #FFFFFF;
+  --color-background-yellow: #FEF8EB;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  color: var(--main);
+  background: var(--color-background-yellow);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  /* color: var(--color-primary-dark); */
+}
+
+p {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+h3 {
+  font-size: 22px;
+}
+
+main {
+  flex: 1;
+}
