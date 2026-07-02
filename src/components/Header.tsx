@@ -1,19 +1,36 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import logo from '../assets/images/cropped-torrie-electrolysis-waxing-logo.png';
 
 export function Header() {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
         <div className={styles.header__brand}>
           <Link to="/" className={styles['header__brand-link']}>
-            <img className={styles['header__brand-img']} src={logo}></img>
+            <img className={styles['header__brand-img']} src={logo} alt="Torrie's Electrolysis & Waxing logo" />
             <h1>Torrie's Electrolysis & Waxing</h1>
           </Link>
         </div>
 
-        <nav className={styles.header__nav}>
+        <button
+          type="button"
+          className={styles.header__menuButton}
+          aria-label={isMobileNavOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileNavOpen}
+          onClick={() => setIsMobileNavOpen((open) => !open)}
+        >
+          <span className={styles.header__menuIcon} />
+        </button>
+
+        <nav
+          className={`${styles.header__nav} ${
+            isMobileNavOpen ? styles.header__navOpen : ''
+          }`}
+        >
           <ul className={styles['header__nav-list']}>
             <li className={styles['header__nav-item']}>
               <Link to="/" className={styles['header__nav-link']}>Home</Link>

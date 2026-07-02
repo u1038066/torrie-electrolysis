@@ -86,15 +86,112 @@
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+.header__menuButton {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 12px;
+  color: var(--color-primary);
+}
+
+.header__menuIcon {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header__menuIcon::before,
+.header__menuIcon::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s ease, top 0.2s ease, opacity 0.2s ease;
+}
+
+.header__menuIcon::before {
+  top: -8px;
+}
+
+.header__menuIcon::after {
+  top: 8px;
+}
+
+.header__menuButton[aria-expanded="true"] .header__menuIcon {
+  background: transparent;
+}
+
+.header__menuButton[aria-expanded="true"] .header__menuIcon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.header__menuButton[aria-expanded="true"] .header__menuIcon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
   .header__container {
     flex-direction: column;
     align-items: stretch;
   }
 
+  .header__nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--color-primary);
+    border-radius: 18px;
+  }
+
+  .header__navOpen {
+    max-height: 240px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__menuButton {
+    display: inline-flex;
+    align-self: center;
+  }
+
   .header__nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .header__nav-item {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .header__nav-item:not(:last-child)::after {
+    content: none;
+  }
+
+  .header__nav-link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container {
+    padding: 0 12px;
   }
 }

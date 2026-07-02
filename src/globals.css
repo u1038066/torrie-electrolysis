@@ -12,22 +12,25 @@
   --color-primary-tint: #F5E6E6;
   --color-accent: #1C5C96;
   --color-background: #F8F6F4;
-  --color-text: #2B1C1C;
+  --color-text: var(--color-white);
   --main: var(--color-text);
   --bg: var(--color-background);
   --color-white: #FFFFFF;
+  --color-black: #000000;
   --color-background-yellow: #FEF8EB;
+  --color-primary-green: #CEFFBF;
+  --color-background-brown: #87613A;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.6;
-  color: var(--main);
-  background: var(--color-background-yellow);
+  color: var(--color-white);
+  background: var(--color-background-brown);
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-green);
   text-decoration: none;
 }
 
